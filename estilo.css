@@ -164,7 +164,7 @@ hr {
 }
 
 .txt-white {
-	color: #060606;
+	color: rgb(0, 0, 0);
 }
 
 .bk-color {
@@ -172,7 +172,7 @@ hr {
 }
 
 .bk-image {
-	background: url('/imagenes/fondofut.webp');
+	background: url('/imagenes/fondo1.avif');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -240,6 +240,12 @@ hr {
 	padding-top: 60px;
 }
 /*galeria*/
+@media (max-width: 768px) {
+    .overlay h2 {
+        font-size: 24px;
+      }
+    
+}
 .galeria{
     font-family: 'open sans';
 }
@@ -303,6 +309,8 @@ hr {
     height:100%;
     cursor: pointer;
 }
+
+
 /*visitanos*/
 h3{
     color: #f0ede9;
