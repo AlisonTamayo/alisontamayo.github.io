@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css" >
+    <title>Document</title>
+    
+</head>
+<body>
+    <header>
+        <!-- Contenido del encabezado -->
+        <h1>Universidad de las Fuerzas Armadas ESPE <br>
+            Alison Tamayo</h1>
+    </header>
+    
+     <!-- contenedor principal-->
+    <div class="cuadricula"  style="background-image: url('fondo.avif'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="division">
+            <!-- División 1 -->
+            <h2>SSL ¿Qué es SSL?</h2>
+            <p>SSL o Secure Sockets Layer es un protocolo de seguridad de Internet basado en el cifrado. Inicialmente 
+                fue desarrollado por Netscape en 1995 para garantizar la privacidad, la autenticación y
+                la integridad de los datos en las comunicaciones de Internet. SSL es el predecesor del cifrado 
+                TLS moderno que se utiliza hoy en día. Los sitios web que implementan SSL/TLS tienen "HTTPS" en su URL en lugar de "HTTP".</p>
+                <img src="img/ssl.jpg" alt="img" class="img">
+        </div>
+
+        <div class="division">
+            <!-- División 2 -->
+            <h2>Burp Suite ¿Qué es Burp Suite?</h2>
+            <p>Burp Suite es una plataforma digital que reúne herramientas especializadas para realizar 
+                pruebas de penetración en aplicaciones web. Burp Suite cuenta con dos versiones: una versión 
+                gratuita (Burp Free) y una versión de pago (burpsuitepro.exe). Las diferenciaremos para establecer 
+                cómo se usan en el hacking ético de páginas web.</p>
+                <img src="img/burp.png" alt="img" class="img">
+        </div>
+
+        <div class="division">
+            <!-- División 3 -->
+            <h2>Dominio</h2>
+            <p>Es el nombre único e irrepetible que se le da a un sitio en Internet para que las marcas 
+                (propietarias de dichas páginas) sean identificadas de forma cómoda y sencilla por los usuarios y sus clientes.</p>
+                <img src="img/dominio.png" alt="img" class="img">
+        </div>
+
+        <div class="division">
+            <!-- División 4 -->
+            <h2>Formulario</h2>
+            <form class="form" action="https://sheetdb.io/api/v1/u2c8s8dvcduhl"  method="post" id="sheetdb-form">
+                <div class="columnas">
+                    <div class="columna">
+                        <form>
+                            <!-- Formulario 1 -->
+                            <!-- Agrega aquí los campos y elementos del primer formulario -->
+                            <h2>Administrador</h2>
+                            <fieldset>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" name="data[nombreadm]" placeholder="Nombre Administrador"><br>
+                                <label for="pais">País:</label>
+                                <input type="text" name="data[paisadmi]" placeholder="Pais"><br>
+                                <label for="telefono">Teléfono:</label>                           
+                                <input type="tel"  name="data[telefonoadmi]" placeholder="09xxxxxxxx"><br>
+                                <label for="correo">Correo:</label>                            
+                                <input type="email" name="data[correoadmi]" placeholder="admin@gmail.com"><br>
+                            </fieldset>
+                            <br>
+                            <fieldset>
+                                <h2>Tecnico</h2>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" name="data[nombretec]" placeholder="Nombre Tecnico"><br>
+                                <label for="pais">País:</label>
+                                <input type="text" name="data[paistec]" placeholder="Pais"><br>
+                                <label for="telefono">Teléfono:</label>                           
+                                <input type="tel"  name="data[telefonotec]" placeholder="09xxxxxxxx"><br>
+                                <label for="correo">Correo:</label>                            
+                                <input type="email" name="data[correotec]" placeholder="admin@gmail.com"><br>
+                            </fieldset>
+                            <br>
+                            <fieldset>
+                                <h2>Datos del Dominio</h2>
+                                <label for="dns">Nombre DNS:</label>
+                                <input type="text"  name="data[dns]" placeholder="Dominio"><br>
+                                <label for="Ip">Dirc Ip:</label>
+                                <input type="text"  name="data[ip]" placeholder="127.0.0.1"><br>
+                                <label for="server1">Name Server1:</label>
+                                <input type="text"  name="data[server1]" placeholder="------"><br>
+                                <label for="server2">Name Server2:</label>
+                                <input type="text"  name="data[server2]" placeholder="------"><br>
+                            </fieldset>
+                            <br>
+                            <fieldset>
+                                <h2>Tipos de Registros</h2>
+                                <label for="a">Servicio A:</label>
+                                <input type="text"  name="data[A]" placeholder="------" ><br>
+                                <label for="MX">Servicio MX:</label>
+                                <input type="text"  name="data[MX]" placeholder="------" ><br>
+                                <label for="TXT">Servicio TXT:</label>
+                                <input type="text"  name="data[TXT]" placeholder="------" ><br>
+                                <label for="CN">Servicio CN:</label>
+                                <input type="text" name="data[CN]" placeholder="------" ><br>
+                                <label for="PTR">Servicio PTR:</label>
+                                <input type="text"  name="data[PTR]" placeholder="------" ><br>
+                                <label for="SPF">Servicio SPF:</label>
+                                <input type="text"  name="data[SPF]" placeholder="------" ><br>
+                            </fieldset>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <script>
+        const form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method : "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+                // you can put any JS code here
+                window.open('pag2.html', '_blank');
+            });
+        });
+    </script>
+</body> 
+<footer id="pie">
+    <div class="links">
+        <ul>
+            <img src="img/face.png" alt="" id="social">
+            <li><a href="https://es-la.facebook.com/">Facebook</a></li>
+            <img src="img/ins.png" alt="" id="social">
+            <li><a href="https://www.instagram.com/">Intragram</a></li>
+            <img src="img/WhatsApp.svg.webp" alt="" id="social">
+            <li><a href="https://wa.me/593989404589">WhatsApp</a></li>
+        </ul>
+    </div>  
+</footer>
+</html>
